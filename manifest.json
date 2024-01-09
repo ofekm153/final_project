@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Reddit News Checker",
+  "version": "1.0",
+  "description": "Check if Reddit news is fake",
+  
+  "icons": {
+    "48": "icon.png"
+  },
+
+  "action": {
+    "default_icon": {
+      "48": "icon.png"
+    },
+    "default_title": "Reddit News Checker"
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://old.reddit.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ]
+}
